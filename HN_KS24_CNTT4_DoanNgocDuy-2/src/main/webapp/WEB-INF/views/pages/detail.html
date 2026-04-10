@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/main-layout}">
+<head>
+  <title>Chi Tiết Sách</title>
+</head>
+<body>
+<layout:fragment name="content">
+
+  <h1 th:text="${pageTitle}">Chi Tiết Sách</h1>
+
+  <table border="1">
+    <tr>
+      <th>Mã Số</th>
+      <td th:text="${book.id}"></td>
+    </tr>
+    <tr>
+      <th>Tên Sách</th>
+      <td th:text="${book.title}"></td>
+    </tr>
+    <tr>
+      <th>Tác Giả</th>
+      <td th:text="${book.author}"></td>
+    </tr>
+    <tr>
+      <th>Giá Bán</th>
+      <td th:text="${#numbers.formatDecimal(book.price, 0, 'COMMA', 0, 'POINT')} + ' VNĐ'"
+          th:classappend="${isHighPrice} ? 'high-price'"></td>
+    </tr>
+    <tr th:if="${isHighPrice}">
+      <td colspan="2"><strong>Sách giá cao (từ 300.000 VNĐ trở lên)</strong></td>
+    </tr>
+  </table>
+
+  <br>
+  <a th:href="@{/books}">Quay lại danh sách</a>
+
+</layout:fragment>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/main-layout}">
+<head>
+    <title>Danh Sách Sách</title>
+</head>
+<body>
+<layout:fragment name="content">
+
+    <h1 th:text="${pageTitle}">Danh Sách Sách</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Mã Số</th>
+            <th>Tên Sách</th>
+            <th>Tác Giả</th>
+            <th>Giá Bán</th>
+            <th>Chi Tiết</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="book : ${books}"
+            th:classappend="${book.price >= 300000} ? 'high-price'">
+            <td th:text="${book.id}"></td>
+            <td th:text="${book.title}"></td>
+            <td th:text="${book.author}"></td>
+            <td th:text="${#numbers.formatDecimal(book.price, 0, 'COMMA', 0, 'POINT')} + ' VNĐ'"></td>
+            <td>
+                <a th:href="@{/books/{id}(id=${book.id})}">Xem Chi Tiết</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</layout:fragment>
+</body>
+</html>
