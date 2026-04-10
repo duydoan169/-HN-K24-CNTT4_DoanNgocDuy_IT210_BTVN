@@ -6,7 +6,7 @@
     <title>Danh Sách Sách</title>
 </head>
 <body>
-<layout:fragment name="content">
+<div layout:fragment="content">
 
     <h1 th:text="${pageTitle}">Danh Sách Sách</h1>
 
@@ -27,13 +27,11 @@
             <td th:text="${book.title}"></td>
             <td th:text="${book.author}"></td>
             <td th:text="${#numbers.formatDecimal(book.price, 0, 'COMMA', 0, 'POINT')} + ' VNĐ'"></td>
-            <td>
-                <a th:href="@{/books/{id}(id=${book.id})}">Xem Chi Tiết</a>
-            </td>
+            <td><a th:href="@{/books/{id}(id=${book.id})}">Xem Chi Tiết</a></td>
         </tr>
         </tbody>
     </table>
 
-</layout:fragment>
+</div>
 </body>
 </html>

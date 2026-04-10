@@ -7,13 +7,18 @@
 </head>
 <body>
 
-<div th:replace="~{fragments/header :: header(${pageTitle})}"></div>
+<header>
+    <h2 th:text="${pageTitle}">BookStore</h2>
+    <nav>
+        <a th:href="@{/books}">Danh Sách Sách</a>
+    </nav>
+</header>
 
-<main>
-    <layout:fragment name="content"/>
-</main>
+<main class="content" layout:fragment="content"></main>
 
-<div th:replace="~{fragments/footer :: footer}"></div>
+<footer>
+    <p>BookStore &copy; 2024</p>
+</footer>
 
 </body>
 </html>

@@ -22,10 +22,10 @@ tasks.withType(JavaCompile) {
 }
 
 dependencies {
-    implementation("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:3.4.0")
     compileOnly('jakarta.servlet:jakarta.servlet-api:6.1.0')
     // Source: https://mvnrepository.com/artifact/org.springframework/spring-webmvc
     implementation("org.springframework:spring-webmvc:7.0.6")
+    implementation("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:3.0.0")
 
     implementation("org.thymeleaf:thymeleaf-spring6:3.1.3.RELEASE")
 
