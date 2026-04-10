@@ -30,7 +30,7 @@ public class BookController {
         return "pages/list";
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/detail/{id}")
     public String bookDetail(@PathVariable("id") int id, Model model) {
         Book book = bookService.getBookById(id);
         if (book == null) {
