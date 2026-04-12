@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/main-layout}">
+<body>
+<section layout:fragment="content">
+    <h2 th:text="${course.name}">Tên khóa</h2>
+    <p><b>Lộ trình:</b> <span th:text="${course.description}"></span></p>
+    <p><b>Giảng viên:</b> <span th:text="${course.teacher}"></span></p>
+    <p><b>Thời lượng:</b> <span th:text="${course.duration} + ' tháng'"></span></p>
+    <p><b>Ngày khai giảng:</b> <span th:text="${course.startDate}"></span></p>
+    <p th:if="${course.full}" class="alert error">HẾT CHỖ</p>
+    <a th:href="@{/course/list}" class="btn btn-ghost">Quay lại danh sách</a>
+</section>
+</body>
+</html>

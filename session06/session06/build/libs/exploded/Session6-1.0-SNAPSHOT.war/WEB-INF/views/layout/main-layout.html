@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>English Center</title>
+  <style>
+    :root{
+      --bg:#f5f7fb; --card:#fff; --text:#1f2937; --muted:#6b7280;
+      --primary:#2563eb; --danger:#dc2626; --success:#059669; --border:#e5e7eb;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+    .container{max-width:1024px;margin:0 auto;padding:16px}
+    .header{background:linear-gradient(135deg,#1d4ed8,#2563eb);color:#fff;border-radius:12px;padding:20px}
+    .header h1{margin:0 0 6px}
+    .header p{margin:0;opacity:.95}
+    .nav{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+    .nav a{text-decoration:none;color:#fff;background:rgba(255,255,255,.18);padding:8px 12px;border-radius:8px}
+    .content{margin-top:16px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px}
+    .alert{padding:10px 12px;border-radius:8px;margin:10px 0}
+    .alert.success{background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0}
+    .alert.error{background:#fef2f2;color:#991b1b;border:1px solid #fecaca}
+    .btn{border:none;border-radius:8px;padding:8px 12px;cursor:pointer;font-weight:600}
+    .btn-primary{background:var(--primary);color:#fff}
+    .btn-danger{background:var(--danger);color:#fff}
+    .btn-ghost{background:#eef2ff;color:#1e3a8a;text-decoration:none;display:inline-block}
+    .field{padding:9px 10px;border:1px solid var(--border);border-radius:8px}
+    .form-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .table-wrap{overflow:auto}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:10px 12px;border-bottom:1px solid var(--border);text-align:left;vertical-align:middle}
+    thead th{background:#f8fafc}
+    tr:hover td{background:#fafafa}
+  </style>
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <h1>English Center</h1>
+    <p>Learn English - Change your life</p>
+    <nav class="nav">
+      <a th:href="@{/course/list}">Danh sách khóa học</a>
+     
+    </nav>
+  </header>
+
+  <main class="content" layout:fragment="content"></main>
+</div>
+</body>
+</html>

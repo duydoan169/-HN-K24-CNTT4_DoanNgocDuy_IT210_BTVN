@@ -6,12 +6,35 @@
     <meta charset="UTF-8">
     <title>Danh sách nhân viên</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 30px; }
-        table { border-collapse: collapse; width: 80%; }
-        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; color: black;}
-        th { background-color: black;  color: white; }
-        tr:nth-child(even) { background-color: #f2f2f2; }
-        .high {font-weight: bold; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+            color: black;
+        }
+
+        th {
+            background-color: black;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .high {
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
