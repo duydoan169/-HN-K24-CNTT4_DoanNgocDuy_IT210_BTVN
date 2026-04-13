@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm Siêu Combo</title>
+</head>
+<body>
+<h2>Thêm Siêu Combo</h2>
+
+<p style="color:red" th:text="${error}"></p>
+<p style="color:green" th:text="${success}"></p>
+
+<form th:action="@{/combos/add}"
+      th:object="${combo}"
+      method="post"
+      enctype="multipart/form-data">
+
+    <div>
+        <label>Tên combo:</label>
+        <input type="text" th:field="*{name}">
+    </div>
+
+    <br>
+
+    <div>
+        <label>Giá combo:</label>
+        <input type="number" step="0.01" th:field="*{price}">
+    </div>
+
+    <br>
+
+    <div>
+        <label>Chọn món ăn:</label>
+        <div th:each="food : ${foods}">
+            <label>
+                <input type="checkbox" th:field="*{itemList}" th:value="${food}">
+                <span th:text="${food}"></span>
+            </label>
+        </div>
+    </div>
+
+    <br>
+
+    <div>
+        <label>Banner combo:</label>
+        <input type="file" name="image" accept=".jpg,.jpeg,.png">
+    </div>
+
+    <br>
+
+    <button type="submit">Lưu combo</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lỗi upload</title>
+</head>
+<body>
+<h2>Lỗi upload file</h2>
+
+<p style="color:red" th:text="${error}"></p>
+<p><b>Request:</b> <span th:text="${path}"></span></p>
+
+<a th:href="@{/combos/add}">Quay lại form thêm combo</a>
+</body>
+</html>
