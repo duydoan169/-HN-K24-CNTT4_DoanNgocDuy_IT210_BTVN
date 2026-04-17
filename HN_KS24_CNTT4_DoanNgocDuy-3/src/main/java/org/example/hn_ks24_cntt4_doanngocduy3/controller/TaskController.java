@@ -36,7 +36,7 @@ public class TaskController {
 
     @GetMapping("/tasks/addPage")
     public String addForm(Model model){
-        model.addAttribute("task", new TaskItem());
+        model.addAttribute("task", new TaskItemDTO());
         return "task-form";
     }
 
