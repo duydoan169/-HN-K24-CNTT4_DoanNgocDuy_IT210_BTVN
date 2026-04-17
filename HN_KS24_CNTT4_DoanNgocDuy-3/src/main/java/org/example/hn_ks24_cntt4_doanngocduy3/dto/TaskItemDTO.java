@@ -17,7 +17,6 @@ public class TaskItemDTO {
     @Length(min = 5, message = "Độ dài tên phải trên 5 ký tự")
     private String title;
 
-    @NotBlank(message = "Deadline không được để trống")
     @Future(message = "Deadline phải ở tương lai")
     private LocalDate deadline;
 

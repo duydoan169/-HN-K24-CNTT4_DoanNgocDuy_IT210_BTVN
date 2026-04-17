@@ -15,25 +15,25 @@
     <div class="form-group">
         <label >ID</label>
         <input type="text" class="form-control" th:field="*{id}">
-        <p class="error" th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></p>
+        <p style="color: red"  class="error" th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></p>
     </div>
 
     <div class="form-group">
         <label >Title</label>
         <input type="text" class="form-control" th:field="*{title}">
-        <p class="error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></p>
+        <p style="color: red"  class="error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></p>
     </div>
 
     <div class="form-group">
         <label >Deadline</label>
         <input type="date" class="form-control" th:field="*{title}">
-        <p class="error" th:if="${#fields.hasErrors('deadline')}" th:errors="*{deadline}"></p>
+        <p style="color: red"  class="error" th:if="${#fields.hasErrors('deadline')}" th:errors="*{deadline}"></p>
     </div>
 
     <div class="form-group">
-        <label >Deadline</label>
+        <label >Priority</label>
         <input type="text" class="form-control" th:field="*{priority}">
-        <p class="error" th:if="${#fields.hasErrors('priority')}" th:errors="*{priority}"></p>
+        <p style="color: red" class="error" th:if="${#fields.hasErrors('priority')}" th:errors="*{priority}"></p>
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
